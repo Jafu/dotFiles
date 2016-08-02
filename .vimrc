@@ -121,7 +121,6 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-set list
 "------------------------------------------------------------
 " Indentation options {{{1
 "
@@ -135,8 +134,10 @@ set list
 
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
-set shiftwidth=2
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set noexpandtab
 
 
 "------------------------------------------------------------
@@ -151,14 +152,6 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-
-
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-
 
 "------------------------------------------------------------
 " vim-plug configuration
@@ -179,6 +172,8 @@ Plug 'tpope/vim-surround'
 Plug 'ternjs/tern_for_vim'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 " Plug 'mtscout6/syntastic-local-eslint.vim'
 " " Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -208,6 +203,27 @@ Plug 'scrooloose/syntastic'
 " Add plugins to &runtimepath
 call plug#end()
 
+" Config to show whitespace characters
+" enable
+set list
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+			
+" change colors of whitelabel chars
+if !has("gui_running")
+	autocmd ColorScheme * highlight NonText ctermfg=237
+	autocmd ColorScheme * highlight SpecialKey ctermfg=237
+else
+	autocmd ColorScheme * highlight NonText guifg=#575b61
+	autocmd ColorScheme * highlight SpecialKey guifg=#575b61
+endif
+
+
+
 " Enable syntax highlighting
 syntax on
 syntax enable
@@ -233,7 +249,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " ctrlp options
 let g:ctrlp_max_files=0
-set wildignore=*/codemetrics/*,*/target/*,*/node_modules/*,*/.git/*
+let g:ctrlp_max_height=50
+
+set wildignore=*/codemetrics/*,*/target/*,*/node_modules/*,*/node/*,*/.git/*
+
 
 " YouCompleteMNe
 let g:is_show_argument_hints_enabled = 1
