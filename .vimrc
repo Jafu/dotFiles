@@ -121,7 +121,7 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-
+set list
 "------------------------------------------------------------
 " Indentation options {{{1
 "
@@ -151,6 +151,14 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 
 "------------------------------------------------------------
 " vim-plug configuration
@@ -222,22 +230,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
-"// let g:syntastic_javascript_eslint_exec = 'eslint_d'
-
-" let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-
-" let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-" let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-
-" let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-
-
-" autocmd FileType javascript call SetUpEslintLocal()
-" function SetUpEslintLocal()
-" 	let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-" 	let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-" endfunction
-
 
 " ctrlp options
 let g:ctrlp_max_files=0
