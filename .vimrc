@@ -139,6 +139,12 @@ set softtabstop=2
 set shiftwidth=2
 set noexpandtab
 
+" highlight cursor line on not insert mode
+set cursorline
+au InsertLeave * set cursorline
+au InsertEnter * set nocursorline
+
+
 
 "------------------------------------------------------------
 " Mappings {{{1
