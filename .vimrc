@@ -57,6 +57,11 @@ set laststatus=2
 " dialogue asking if you wish to save changed files.
 set confirm
 
+
+" Updates to files should be detected automatically, and the view should
+" update
+set autoread
+
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
 
@@ -98,7 +103,7 @@ au InsertEnter * set nocursorline
 set scrolloff=7
 
 " mark column at character ## to prevent long lines
-set colorcolumn=84
+set colorcolumn=82
 
 "------------------------------------------------------------
 " Mappings {{{1
