@@ -1,16 +1,3 @@
-" URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
-
-"------------------------------------------------------------
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
-
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -20,16 +7,6 @@ set nocompatible
 " and for plugins that are filetype specific.
 filetype indent plugin on
 
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
 " One such option is the 'hidden' option, which allows you to re-use the same
 " window and switch from an unsaved buffer without saving it first. Also allows
 " you to keep an undo history for multiple files when re-using the same window
@@ -39,12 +16,6 @@ filetype indent plugin on
 " try to quit without saving, and swap files will keep you safe if your computer
 " crashes.
 set hidden
-
-" Note that not everyone likes working this way (with the hidden option).
-" Alternatives include using tabs or split windows instead of re-using the same
-" window as mentioned above, and/or either of the following options:
-" set confirm
-" set autowriteall
 
 " Better command-line completion
 set wildmenu
@@ -56,23 +27,12 @@ set showcmd
 " mapping of <C-L> below)
 set hlsearch
 
-" Modelines have historically been a source of security vulnerabilities. As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-" set nomodeline
-
-
-"------------------------------------------------------------
-" Usability options {{{1
-"
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
-
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+
+" substitude line globally by default
+set gdefault
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -122,17 +82,6 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
-"------------------------------------------------------------
-" Indentation options {{{1
-"
-" Indentation settings according to personal preference.
-
-" Indentation settings for using 2 spaces instead of tabs.
-" Do not change 'tabstop' from its default value of 8 with this setup.
-"set shiftwidth=2
-"set softtabstop=2
-"set expandtab
-
 " Indentation settings for using hard tabs for indent. Display tabs as
 " two characters wide.
 set tabstop=2
@@ -148,6 +97,9 @@ au InsertEnter * set nocursorline
 " Keep # lines below and above the cursor
 set scrolloff=7
 
+" mark column at character ## to prevent long lines
+set colorcolumn=84
+
 "------------------------------------------------------------
 " Mappings {{{1
 "
@@ -160,6 +112,12 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" easier move between brackets
+nnoremap <tab> %
+vnoremap <tab> %
+
+
 
 "------------------------------------------------------------
 " vim-plug configuration
@@ -219,7 +177,7 @@ set list
 nmap <leader>l :set list!<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:»\ ,eol:¬
 			
 " change colors of whitelabel chars
 if !has("gui_running")
@@ -265,3 +223,4 @@ set wildignore=*/codemetrics/*,*/target/*,*/node_modules/*,*/node/*,*/.git/*
 " YouCompleteMNe
 let g:is_show_argument_hints_enabled = 1
 autocmd FileType javascript setlocal omnifunc=tern#Complete
+
