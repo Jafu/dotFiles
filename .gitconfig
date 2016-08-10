@@ -39,3 +39,4 @@
 	helper = osxkeychain
 [commit]
 	template = /Users/intern/.stCommitMsg
+[merge]
