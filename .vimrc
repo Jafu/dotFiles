@@ -229,3 +229,16 @@ set wildignore=*/codemetrics/*,*/target/*,*/node_modules/*,*/node/*,*/.git/*
 let g:is_show_argument_hints_enabled = 1
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
