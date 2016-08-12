@@ -59,19 +59,17 @@ export LC_ALL=en_US.UTF-8
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:~/bin
+export NODE_PATH="/usr/local/lib/node_modules"
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/share/npm/bin:$NODE_PATH:~/bin
 
 export MAVEN_OPTS="-Xms256m -Xmx4096m"
 
 export MEME_CONF_HOME=/Users/intern/Ubermetrics/conf
 
-export NODE_PATH="/usr/local/lib/node_modules"
-export PATH=$PATH:/usr/local/share/npm/bin:$NODE_PATH
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 export DOCKER_HOST=tcp://localhost:4243
-launchctl setenv PATH $PATH
 
 ## Setup zsh-autosuggestions
 _fizsh_F_DOT_DIR=~/.fizsh
