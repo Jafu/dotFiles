@@ -122,8 +122,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <tab> %
 vnoremap <tab> %
 
-
-
 "------------------------------------------------------------
 " vim-plug configuration
 "------------------------------------------------------------
@@ -178,9 +176,6 @@ call plug#end()
 " enable
 set list
 
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:»\ ,eol:¬
 			
@@ -217,6 +212,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+
+" syntastic mapping
+nmap <leader>bd :bp \| bd #<CR>
+
 
 " ctrlp options
 let g:ctrlp_max_files=0
