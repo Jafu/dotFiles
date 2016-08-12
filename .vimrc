@@ -122,6 +122,15 @@ nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <tab> %
 vnoremap <tab> %
 
+
+"" manage buffers
+" close buffer but keep split window; works with syntastic
+nmap <leader>bd :bp \| bd #<CR>
+" goto next buffer
+nmap <leader>bn :bn<CR>
+" goto previous buffer
+nmap <leader>bp :bp<CR>
+
 "------------------------------------------------------------
 " vim-plug configuration
 "------------------------------------------------------------
@@ -213,8 +222,6 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
 
-" syntastic mapping
-nmap <leader>bd :bp \| bd #<CR>
 
 
 " ctrlp options
