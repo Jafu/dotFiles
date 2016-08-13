@@ -151,6 +151,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
 " Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 " Plug 'mtscout6/syntastic-local-eslint.vim'
 " " Any valid git URL is allowed
