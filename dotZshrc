@@ -64,7 +64,7 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/share/
 
 export MAVEN_OPTS="-Xms256m -Xmx4096m"
 
-export MEME_CONF_HOME=/Users/intern/Ubermetrics/conf
+export MEME_CONF_HOME=/Users/developer/Ubermetrics/conf
 
 
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -96,4 +96,6 @@ bindkey '^T' autosuggest-toggle
 
 AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=6'
 
-
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

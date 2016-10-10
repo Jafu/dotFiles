@@ -4,14 +4,14 @@
 [push]
 	default = matching
 [core]
-	excludesfile = /Users/intern/.gitignore_global
+	#excludesfile = /Users/developer/.gitignore_global
   trustExitCode = true
 
 
 [credential]
 	helper = osxkeychain
 [commit]
-	template = /Users/intern/.stCommitMsg
+	#template = /Users/developer/.stCommitMsg
 
 [merge]
 	tool = vimdiff

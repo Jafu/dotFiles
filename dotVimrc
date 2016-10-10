@@ -1,3 +1,4 @@
+
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -56,7 +57,6 @@ set laststatus=2
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
 set confirm
-
 
 " Updates to files should be detected automatically, and the view should
 " update
@@ -233,4 +233,12 @@ vnoremap <silent> # :<C-U>
 nmap <leader>t :call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
 nmap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
 
+
+
+
+
+
+" Macros
+" Macro clean import
+let @i='f,x"ryykdkdkuku/(kd"eyy?[O"ep"rpkuJxxklxi from ''0simport $r;kdd0/[jdd/(jdd?[j0'
 
