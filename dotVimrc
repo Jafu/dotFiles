@@ -103,7 +103,7 @@ au InsertEnter * set cursorline
 set scrolloff=7
 
 " mark column at character ## to prevent long lines
-set colorcolumn=82
+set colorcolumn=90
 
 "------------------------------------------------------------
 " Mappings {{{1
@@ -117,10 +117,6 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-
-" easier move between brackets
-nnoremap <tab> %
-vnoremap <tab> %
 
 
 "" manage buffers
@@ -154,7 +150,7 @@ Plug 'scrooloose/syntastic'
 " Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-" Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'benmills/vimux'
 
 " Add plugins to &runtimepath
@@ -240,5 +236,11 @@ nmap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.sh .
 
 " Macros
 " Macro clean import
-let @i='f,x"ryykdkdkuku/(kd"eyy?[O"ep"rpkuJxxklxi from ''0simport $r;kdd0/[jdd/(jdd?[j0'
+let @i='0f,r;dd?[P/],jdd?[kP0simport f,s fromJ/definej'
+" Macro clean last import
+let @o='0"ryyjj"eyyNOimport"epkJA from"rpkJA;j0d4jOGdddddd'
+let @k='gg0/export defaultf)i...args/that.construct.applywwwdt(lci(...argsgg0'
+let @j='[{0ct(export default f{i=> jVG<0k@k'
 
+" Macro clean require from es6
+let @l='*N"vyet''a.es6neaModuleb"mye/varOvar "vpa = "mpa.default;?define'
