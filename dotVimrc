@@ -95,9 +95,9 @@ set shiftwidth=4
 set noexpandtab
 
 " highlight cursor line on not insert mode
-set nocursorline
-au InsertLeave * set nocursorline
-au InsertEnter * set cursorline
+set cursorline
+au InsertLeave * set cursorline
+au InsertEnter * set nocursorline
 
 " Keep # lines below and above the cursor
 set scrolloff=7
