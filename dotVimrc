@@ -112,20 +112,30 @@ set colorcolumn=90
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+nnoremap Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
 
+" move lines up and down
+nnoremap - ddp
+nnoremap _ kddpk
+
+
+" make word upercase
+inoremap <c-u> <esc>viwUea
+nnoremap <c-u> viwUe
+
+
 "" manage buffers
 " close buffer but keep split window; works with syntastic
-nmap <leader>bd :bp \| bd #<CR>
+nnoremap <leader>bd :bp \| bd #<CR>
 " goto next buffer
-nmap <leader>bn :bn<CR>
+nnoremap <leader>bn :bn<CR>
 " goto previous buffer
-nmap <leader>bp :bp<CR>
+nnoremap <leader>bp :bp<CR>
 
 "------------------------------------------------------------
 " vim-plug configuration
@@ -226,12 +236,8 @@ vnoremap <silent> # :<C-U>
 
 
 " VimuxRunCommand mapping
-nmap <leader>t :call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
-nmap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
-
-
-
-
+nnoremap <leader>t :call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
+nnoremap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
 
 
 " Macros
