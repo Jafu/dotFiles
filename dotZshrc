@@ -50,7 +50,7 @@ HELPDIR=/usr/local/share/zsh/help
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rsync git vagrant mvn brew osx terminalapp npm node jira lein)
+plugins=(rsync git vagrant mvn brew osx terminalapp npm node jira lein zsh-autosuggestions history-substring-search)
 
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -71,32 +71,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 export DOCKER_HOST=tcp://localhost:4243
 
-## Setup zsh-autosuggestions
-_fizsh_F_DOT_DIR=~/.fizsh
-#source $_fizsh_F_DOT_DIR/fizsh
-# source $_fizsh_F_DOT_DIR/zsh-syntax-highlighting.zsh
-source $_fizsh_F_DOT_DIR/zsh-history-substring-search.zsh
-source $_fizsh_F_DOT_DIR/zsh-keybindings-history-substring-search.zsh
-# source $_fizsh_F_DOT_DIR/fizsh-miscellaneous.zsh
-source ~/.zsh-autosuggestions/autosuggestions.zsh
-
-
-## Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-
-zle -N zle-line-init
-
-
-## use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-## zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
-## source /Users/intern/.gulp-autocompletion-zsh/gulp-autocompletion.zsh
-
-AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=6'
-
-fpath=(/usr/local/share/zsh-completions $fpath)
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000000
