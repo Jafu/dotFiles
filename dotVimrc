@@ -79,7 +79,6 @@ set cmdheight=2
 
 " Display line numbers on the left
 set number
-set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -149,6 +148,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'crusoexia/vim-monokai'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'wavded/vim-stylus'
 Plug 'crusoexia/vim-javascript-lib'
 Plug 'altercation/vim-colors-solarized'
@@ -162,7 +162,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'benmills/vimux'
-
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -183,6 +182,8 @@ else
 endif
 
 
+" Plugin vim-jsx
+let g:jsx_ext_required = 0
 
 " Enable syntax highlighting
 syntax on
@@ -234,6 +235,32 @@ vnoremap <silent> # :<C-U>
 	\gV:call setreg('"', old_reg, old_regtype)<CR>
 
 
+" airline config: Mode indicator
+let g:airline_mode_map = {
+	\'c': 'COMMAND',
+	\'^S': 'S-BLOCK',
+	\'R': 'REPLACE',
+	\'s': 'SELECT',
+	\'t': 'TERMINAL',
+	\'V': 'V-LINE',
+	\'^V': 'V-BLOCK',
+	\'i': 'INSERT',
+	\'__': '------',
+	\'S': 'S-LINE',
+	\'v': 'VISUAL',
+	\'n': 'N'
+\}
+
+" airline config: dont show expected string
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
+" airline config: cursor position
+let g:airline_section_z = "%l:%v[%L]"
+
+" airline config: truncate branchname
+let g:airline#extensions#branch#displayed_head_limit = 6
+let g:airline#extensions#hunks#non_zero_only = 1
+
 
 " VimuxRunCommand mapping
 nnoremap <leader>t :call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
@@ -241,6 +268,7 @@ nnoremap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.
 
 
 " Macros
+" Run macros amd to esmodule: @i@o@j
 " Macro clean import
 let @i='0f,r;dd?[P/],jdd?[kP0simport f,s fromJ/definej'
 " Macro clean last import
