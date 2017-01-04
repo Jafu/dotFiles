@@ -32,6 +32,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
+" directly highlight searchresult while tying
+set incsearch
+
 " substitude line globally by default
 set gdefault
 
@@ -104,6 +107,9 @@ set scrolloff=7
 " mark column at character ## to prevent long lines
 set colorcolumn=90
 
+" set system clipboard as default register
+set clipboard=unnamed
+
 "------------------------------------------------------------
 " Mappings {{{1
 "
@@ -125,7 +131,6 @@ nnoremap _ kddpk
 
 " make word upercase
 inoremap <c-u> <esc>viwUea
-nnoremap <c-u> viwUe
 
 
 "" manage buffers
