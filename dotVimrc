@@ -162,6 +162,10 @@ nnoremap <leader>bn :bn<CR>
 " goto previous buffer
 nnoremap <leader>bp :bp<CR>
 
+
+" Find F I X M Es
+nnoremap <leader>fx :vimgrep FIXME frontend/src/main/js/**/*.js
+
 "------------------------------------------------------------
 " vim-plug configuration
 "------------------------------------------------------------
