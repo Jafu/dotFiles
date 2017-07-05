@@ -264,6 +264,8 @@ vnoremap <silent> # :<C-U>
 	\escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
 	\gV:call setreg('"', old_reg, old_regtype)<CR>
 
+" get rid of netrw save confirmation on quit
+autocmd FileType netrw setl bufhidden=delete
 
 " airline config: Mode indicator
 let g:airline_mode_map = {
