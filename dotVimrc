@@ -86,6 +86,14 @@ set number
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 
+" netrw explor/Vexplore/Sexplore
+" preview vertically
+let g:netrw_preview = 1
+" preview vertically
+let g:netrw_liststyle = 3
+
+
+
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
