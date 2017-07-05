@@ -175,7 +175,9 @@ call plug#begin('~/.vim/plugged')
 
 " " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 " Plug 'junegunn/vim-easy-align'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'crusoexia/vim-monokai'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -192,6 +194,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'benmills/vimux'
+Plug 'mileszs/ack.vim'
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -239,6 +242,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 
+" fzf options
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-t> :BLines<CR>
 
 " ctrlp options
 let g:ctrlp_max_files=0
@@ -303,11 +309,9 @@ nnoremap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.
 " Run macros amd to esmodule: @i@o@j
 " Macro clean import
 let @i='0f,r;dd?[P/],jdd?[kP0simport f,s fromJ/definej'
-" Macro clean last import
-let @o='0"ryyjj"eyyNOimport"epkJA from"rpkJA;j0d4jOGdddddd'
-let @k='gg0/export defaultf)i...args/that.construct.applywwwdt(lci(...argsgg0'
-let @j='[{0ct(export default f{i=> jVG<0k@k'
 
 " Macro clean require from es6
 let @l='*N"vyet''a.es6neaModuleb"mye/varOvar "vpa = "mpa.default;?define'
+
+" jira to markdown, markdown to jira plugin
 so ~/.vim/j2m.vim

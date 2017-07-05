@@ -97,6 +97,7 @@ source $(brew --prefix nvm)/nvm.sh
 export MY_OWNCLOUD=~/ownCloud/UMT-Development/Ordner\ Jakob/
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 export REPO_HOME=/Users/developer/Ubermetrics/repos
 export UBER_HOME=$REPO_HOME/uber
