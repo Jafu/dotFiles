@@ -194,8 +194,11 @@ Plug 'blockloop/vim-codeschool'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'vim-scripts/BusyBee'
 
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'leshill/vim-json'
 Plug 'wavded/vim-stylus'
 Plug 'crusoexia/vim-javascript-lib'
 Plug 'altercation/vim-colors-solarized'
@@ -203,15 +206,21 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-surround'
 Plug 'ternjs/tern_for_vim'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/syntastic'
-" Plug 'airblade/vim-gitgutter'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
-Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'airblade/vim-gitgutter'
+" Plug 'mhinz/vim-signify'
 Plug 'benmills/vimux'
 Plug 'mileszs/ack.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'embear/vim-localvimrc'
+"
+Plug 'blueyed/vim-diminactive'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'flowtype/vim-flow'
 " Add plugins to &runtimepath
 call plug#end()
+
 
 " Config to show whitespace characters
 " enable
@@ -221,14 +230,21 @@ set list
 set listchars=tab:»\ ,eol:¬
 			
 " change colors of whitelabel chars
-if !has("gui_running")
-	autocmd ColorScheme * highlight NonText ctermfg=237
-	autocmd ColorScheme * highlight SpecialKey ctermfg=237
-else
-	autocmd ColorScheme * highlight NonText guifg=#575b61
-	autocmd ColorScheme * highlight SpecialKey guifg=#575b61
-endif
+" if !has("gui_running")
+" "	autocmd ColorScheme * highlight NonText ctermfg=237
+" "	autocmd ColorScheme * highlight SpecialKey ctermfg=237
+" "else
+" "	autocmd ColorScheme * highlight NonText guifg=#575b61
+" "	autocmd ColorScheme * highlight SpecialKey guifg=#575b61
+" "endif
 
+" vim gitgutter
+let g:gitgutter_max_signs = 10000
+
+"
+" vim-signify
+" let g:signify_realtime = 1 // Caution will autowrite files
+" set updatetime=1000
 
 " Plugin vim-jsx
 let g:jsx_ext_required = 0
@@ -246,26 +262,12 @@ set t_Co=256
 
 "" syntastic recommended settings
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
 
 
 " fzf options
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :Files<CR>
 nnoremap <C-t> :BLines<CR>
-
-" ctrlp options
-let g:ctrlp_max_files=0
-let g:ctrlp_max_height=50
-
-set wildignore=*/codemetrics/*,*/target/*,*/node_modules/*,*/node/*,*/.git/*
 
 
 " YouCompleteMNe
@@ -314,19 +316,20 @@ let g:airline_section_z = "%l:%v[%L]"
 let g:airline#extensions#branch#displayed_head_limit = 6
 let g:airline#extensions#hunks#non_zero_only = 1
 
-
-" VimuxRunCommand mapping
-nnoremap <leader>t :call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
-nnoremap <leader>wt :checktime<CR>:w<CR>:call VimuxRunCommand("./buster-sublime.sh . " . expand("%"))<CR>
-
-
-" Macros
-" Run macros amd to esmodule: @i@o@j
-" Macro clean import
-let @i='0f,r;dd?[P/],jdd?[kP0simport f,s fromJ/definej'
-
-" Macro clean require from es6
-let @l='*N"vyet''a.es6neaModuleb"mye/varOvar "vpa = "mpa.default;?define'
+" local vimrc whitelist: do not ask
+let g:localvimrc_whitelist=['/Users/developer/Ubermetrics/repos/*']
+let g:localvimrc_sandbox = 0
 
 " jira to markdown, markdown to jira plugin
 so ~/.vim/j2m.vim
+
+" diminactive plugin
+let g:diminactive_enable_focus = 1
+
+
+" vim-flow
+let g:flow#enable = 0
+
+" ale
+let g:ale_fixers = { 'javascript': ['eslint'] }
+
