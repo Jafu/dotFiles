@@ -110,23 +110,23 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
+
+" Keep # lines below and above the cursor
+set scrolloff=7
+
 " highlight cursor line on not insert mode
 set cursorline
 au InsertLeave * set cursorline
 au InsertEnter * set nocursorline
 
-" Keep # lines below and above the cursor
-set scrolloff=7
-
-" mark column at character ## to prevent long lines
-augroup BgHighlight
-	autocmd!
-	autocmd WinEnter * set colorcolumn=90
-	autocmd WinLeave * set colorcolumn=0
-augroup END
+" add max charcters in line marker
+set colorcolumn=90
 
 " set system clipboard as default register
 set clipboard=unnamed
+
+" vimdiff
+set diffopt=iwhite,vertical,filler
 
 "------------------------------------------------------------
 " Mappings {{{1
