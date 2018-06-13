@@ -187,7 +187,13 @@ call plug#begin('~/.vim/plugged')
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 Plug 'crusoexia/vim-monokai'
+Plug 'w0ng/vim-hybrid'
+Plug 'blockloop/vim-codeschool'
+Plug 'Lokaltog/vim-distinguished'
+Plug 'vim-scripts/BusyBee'
+
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'wavded/vim-stylus'
@@ -230,12 +236,12 @@ let g:jsx_ext_required = 0
 " Enable syntax highlighting
 syntax on
 syntax enable
-colorscheme monokai
-" set background=dark
+colorscheme hybrid
+set background=dark
 " colorscheme solarized
 set t_Co=256
-let g:monokai_term_italic = 1
-let g:monokai_gui_italic = 1
+" let g:monokai_term_italic = 1
+" let g:monokai_gui_italic = 1
 
 
 "" syntastic recommended settings
