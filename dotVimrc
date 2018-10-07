@@ -328,3 +328,6 @@ let g:flow#enable = 0
 " ale
 let g:ale_fixers = { 'javascript': ['eslint'] }
 
+" fugitive
+" autoclose buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
