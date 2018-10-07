@@ -84,6 +84,7 @@ export IOS_APP_HOME=$REPO_HOME/iosapp
 export TOOLS_HOME=$REPO_HOME/tools
 export WEBAPP_HOME=$REPO_HOME/some
 export CONFIG_HOME=$REPO_HOME/config-management
+export GUI_WEB_HOME=$REPO_HOME/gui-web
 
 
 #JAVA
