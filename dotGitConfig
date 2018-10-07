@@ -1,8 +1,6 @@
 [user]
 	name = jafu
-	email = jakobfuhrmann@zoho.com
-[push]
-	default = matching
+	email = 3326760+Jafu@users.noreply.github.com
 [core]
 	#excludesfile = /Users/developer/.gitignore_global
   trustExitCode = true
@@ -25,3 +23,8 @@
 	trustExitCode = true
 [commit]
 	template = /Users/developer/.stCommitMsg
+
+[includeIf "gitdir:~/Ubermetrics/"]
+	[user]
+		name = Jakob Fuhrmann
+		email = jakob.fuhrmann@ubermetrics-technologies.com
