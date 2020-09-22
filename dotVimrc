@@ -211,6 +211,8 @@ Plug 'benmills/vimux' "tmux intergration
 Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate' "autoclose pairs
 Plug 'embear/vim-localvimrc'
+
+Plug 'ElmCast/elm-vim'
 "
 Plug 'blueyed/vim-diminactive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
