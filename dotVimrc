@@ -347,8 +347,12 @@ let g:diminactive_enable_focus = 1
 let g:flow#enable = 0
 
 " ale
+let g:ale_linters = { 'javascript': ['eslint'] }
 let g:ale_fixers = { 'javascript': ['eslint'] }
-
+nnoremap <leader>e :ALENext<CR>
+nnoremap <leader>E :ALEPrevious<CR>
+highlight ALEWarning ctermbg=none
+highlight ALEError ctermbg=none
 " fugitive
 " autoclose buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
