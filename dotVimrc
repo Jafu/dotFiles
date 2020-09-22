@@ -197,8 +197,11 @@ Plug 'mxw/vim-jsx'
 Plug 'leshill/vim-json'
 Plug 'wavded/vim-stylus'
 Plug 'crusoexia/vim-javascript-lib'
-Plug 'altercation/vim-colors-solarized'
-Plug 'Valloric/YouCompleteMe'
+Plug 'altercation/vim-colors-solarized' "theme
+Plug 'ervandew/supertab' " required for ycm and ultisnips integration
+Plug 'Valloric/YouCompleteMe' "intellisense
+Plug 'sirver/ultisnips' " snippets runner
+Plug 'honza/vim-snippets' " snippets
 Plug 'tpope/vim-surround'
 Plug 'ternjs/tern_for_vim'
 Plug 'vim-airline/vim-airline'
@@ -333,3 +336,13 @@ let g:ale_fixers = { 'javascript': ['eslint'] }
 " fugitive
 " autoclose buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
