@@ -95,6 +95,7 @@ export MAVEN_OPTS="-Xms256m -Xmx4096m"
 #Ubermetrics
 export MEME_CONF_HOME=/Users/developer/Ubermetrics/conf
 export MY_OWNCLOUD=~/ownCloud/UMT-Development/Ordner\ Jakob/
+export UMT_DRIVE=~/umt-drive/
 
 export REPO_HOME=/Users/developer/Ubermetrics/repos
 export UBER_HOME=$REPO_HOME/uber
@@ -102,9 +103,14 @@ export OPENAPI_UI_HOME=$REPO_HOME/openapi-ui
 export HTMLVIS_HOME=$REPO_HOME/htmlvis
 export IOS_APP_HOME=$REPO_HOME/iosapp
 export TOOLS_HOME=$REPO_HOME/tools
-export WEBAPP_HOME=$REPO_HOME/some
+export DEPLOY_GIT_HOME=$REPO_HOME/deploy_git
+export FRONTEND_SERVICES_HOME=$REPO_HOME/frontend-services
+export WEBAPP_HOME=$REPO_HOME/webapp
 export CONFIG_HOME=$REPO_HOME/config-management
 export GUI_WEB_HOME=$REPO_HOME/gui-web
+export GUI_SERVER_HOME=$REPO_HOME/gui-server
+export GUI_ORCHESTRATION_HOME=$REPO_HOME/gui-orchestration
+export GUI_BACKEND_HOME=$REPO_HOME/gui-backend
 
 
 #JAVA
