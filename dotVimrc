@@ -182,6 +182,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'crusoexia/vim-monokai'
 Plug 'w0ng/vim-hybrid'
