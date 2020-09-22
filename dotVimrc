@@ -203,15 +203,13 @@ Plug 'Valloric/YouCompleteMe' "intellisense
 Plug 'sirver/ultisnips' " snippets runner
 Plug 'honza/vim-snippets' " snippets
 Plug 'tpope/vim-surround'
-Plug 'ternjs/tern_for_vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'mhinz/vim-signify'
-Plug 'benmills/vimux'
+Plug 'benmills/vimux' "tmux intergration
 Plug 'mileszs/ack.vim'
-Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate' "autoclose pairs
 Plug 'embear/vim-localvimrc'
 "
 Plug 'blueyed/vim-diminactive'
