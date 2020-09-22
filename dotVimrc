@@ -213,6 +213,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'blueyed/vim-diminactive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'flowtype/vim-flow'
+Plug 'tidalcycles/vim-tidal'
 " Add plugins to &runtimepath
 call plug#end()
 
