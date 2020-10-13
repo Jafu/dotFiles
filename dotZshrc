@@ -50,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rsync git vagrant mvn brew osx terminalapp npm node jira lein zsh-autosuggestions history-substring-search)
+plugins=(rsync git npm node jira lein zsh-autosuggestions history-substring-search)
 
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
