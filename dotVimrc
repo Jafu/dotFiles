@@ -170,6 +170,10 @@ nnoremap <leader>bp :bp<CR>
 " Find F I X M Es
 nnoremap <leader>fx :vimgrep FIXME frontend/src/main/js/**/*.js
 
+
+" Make ale work with coc
+let g:ale_disable_lsp = 1
+
 "------------------------------------------------------------
 " vim-plug configuration
 "------------------------------------------------------------
@@ -184,29 +188,38 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 
+" Themes
 Plug 'crusoexia/vim-monokai'
 Plug 'w0ng/vim-hybrid'
 Plug 'blockloop/vim-codeschool'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'vim-scripts/BusyBee'
-
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'leshill/vim-json'
-Plug 'wavded/vim-stylus'
-Plug 'crusoexia/vim-javascript-lib'
 Plug 'altercation/vim-colors-solarized' "theme
-Plug 'ervandew/supertab' " required for ycm and ultisnips integration
-Plug 'Valloric/YouCompleteMe' "intellisense
-Plug 'sirver/ultisnips' " snippets runner
-Plug 'honza/vim-snippets' " snippets
+
+Plug 'godlygeek/tabular' " align inside text into column
+Plug 'plasticboy/vim-markdown'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'leshill/vim-json'
+Plug 'wavded/vim-stylus'
+" Plug 'crusoexia/vim-javascript-lib'
+" Plug 'ervandew/supertab' "required for ycm and ultisnips integration
+" Plug 'Valloric/YouCompleteMe' "intellisense
+" Plug 'sirver/ultisnips' "snippets runner
+" Plug 'honza/vim-snippets' "snippets
+" Plug 'flowtype/vim-flow' "javascript flow
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "VS Code completion
+
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+
+" Lint
 Plug 'w0rp/ale'
+
+" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 Plug 'benmills/vimux' "tmux intergration
 Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate' "autoclose pairs
@@ -216,8 +229,6 @@ Plug 'ElmCast/elm-vim'
 "
 Plug 'blueyed/vim-diminactive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'flowtype/vim-flow'
-Plug 'tidalcycles/vim-tidal'
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -357,12 +368,12 @@ highlight ALEError ctermbg=none
 " autoclose buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
-" (via http://stackoverflow.com/a/22253548/1626737)
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+"" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+"" (via http://stackoverflow.com/a/22253548/1626737)
+"let g:SuperTabDefaultCompletionType    = '<C-n>'
+"let g:SuperTabCrMapping                = 0
+"let g:UltiSnipsExpandTrigger           = '<tab>'
+"let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+"let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+"let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
