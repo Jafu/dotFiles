@@ -115,9 +115,6 @@ export GUI_ORCHESTRATION_HOME=$REPO_HOME/gui-orchestration
 export GUI_BACKEND_HOME=$REPO_HOME/gui-backend
 
 
-#JAVA
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 #History
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000000
@@ -148,3 +145,6 @@ _fzf_compgen_path() {
 }
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+
+
