@@ -2,9 +2,8 @@
 	name = jafu
 	email = 3326760+Jafu@users.noreply.github.com
 [core]
-	#excludesfile = /Users/developer/.gitignore_global
   trustExitCode = true
-	excludesfile = /Users/developer/.gitignore_global
+	excludesfile = /home/jakob/.gitignore_global
 
 
 [credential]
