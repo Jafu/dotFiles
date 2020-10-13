@@ -118,7 +118,7 @@ au InsertEnter * set nocursorline
 set colorcolumn=90
 
 " set system clipboard as default register
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " vimdiff
 set diffopt=iwhite,vertical,filler
