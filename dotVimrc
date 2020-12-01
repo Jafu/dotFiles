@@ -195,6 +195,9 @@ Plug 'blockloop/vim-codeschool'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'vim-scripts/BusyBee'
 Plug 'altercation/vim-colors-solarized' "theme
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 
 Plug 'godlygeek/tabular' " align inside text into column
 Plug 'plasticboy/vim-markdown'
@@ -205,13 +208,11 @@ Plug 'wavded/vim-stylus'
 " Plug 'crusoexia/vim-javascript-lib'
 " Plug 'ervandew/supertab' "required for ycm and ultisnips integration
 " Plug 'Valloric/YouCompleteMe' "intellisense
-" Plug 'sirver/ultisnips' "snippets runner
-" Plug 'honza/vim-snippets' "snippets
+Plug 'sirver/ultisnips' "snippets runner
+Plug 'honza/vim-snippets' "snippets
 " Plug 'flowtype/vim-flow' "javascript flow
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "VS Code completion
 
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 
 " Lint
 Plug 'w0rp/ale'
@@ -219,14 +220,22 @@ Plug 'w0rp/ale'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'stsewd/fzf-checkout.vim'
 
+
+Plug 'ElmCast/elm-vim'
+"
+" Appearance
 Plug 'benmills/vimux' "tmux intergration
 Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate' "autoclose pairs
 Plug 'embear/vim-localvimrc'
+Plug 'tpope/vim-unimpaired' " improved shortcut patterns from tpope	
+Plug 'tpope/vim-surround' " suround stuff with {}[]() ad others
+Plug 'tpope/vim-speeddating' " increase date fields, in such formats 2020-10-16, w/ <c-a>, <c-x>
+Plug 'tpope/vim-repeat' " improve . with support for tpope plugins
+Plug 'vim-airline/vim-airline'
 
-Plug 'ElmCast/elm-vim'
-"
 Plug 'blueyed/vim-diminactive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 " Add plugins to &runtimepath
@@ -263,7 +272,7 @@ let g:jsx_ext_required = 0
 " Enable syntax highlighting
 syntax on
 syntax enable
-colorscheme hybrid
+colorscheme onedark
 set background=dark
 " colorscheme solarized
 set t_Co=256
@@ -358,8 +367,17 @@ let g:diminactive_enable_focus = 1
 let g:flow#enable = 0
 
 " ale
-let g:ale_linters = { 'javascript': ['eslint'] }
-let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'html': [ 'prettier' ],
+\ 'css': [ 'prettier' ],
+\ }
+
+let g:ale_fixers = {
+\ 'javascript': ['eslint'],
+\ 'html': [ 'prettier' ],
+\ 'css': [ 'prettier' ],
+\ }
 nnoremap <leader>e :ALENext<CR>
 nnoremap <leader>E :ALEPrevious<CR>
 highlight ALEWarning ctermbg=none
@@ -377,3 +395,5 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 "let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 "let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 "let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+source ~/.config/nvim/plugins/coc.vim
