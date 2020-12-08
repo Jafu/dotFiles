@@ -151,6 +151,19 @@ _fzf_compgen_path() {
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 
-# thefuck cli helper to hint mispell issues
-eval $(thefuck --alias)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jakob/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jakob/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jakob/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jakob/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
