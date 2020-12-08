@@ -356,9 +356,6 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:localvimrc_whitelist=['/home/jakob/repos/*']
 let g:localvimrc_sandbox = 0
 
-" jira to markdown, markdown to jira plugin
-so ~/.vim/j2m.vim
-
 " diminactive plugin
 let g:diminactive_enable_focus = 1
 
