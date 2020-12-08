@@ -10,5 +10,15 @@
 	tool = vimdiff
 	conflictstyle = diff3
 
+[includeIf "gitdir:~/repos/dotFiles"]
+	[user]
+		name = jafu
+		email = 3326760+Jafu@users.noreply.github.com
+
+[includeIf "gitdir:~/repos/"]
+	[user]
+		name = Jakob Fuhrmann
+		email = jakob.fuhrmann@ambrosys.de
+
 [pull]
 	ff = only
