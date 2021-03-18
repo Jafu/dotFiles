@@ -195,6 +195,7 @@ set statusline+=%*
 " fzf options
 nnoremap <C-p> :Files<CR>
 nnoremap <C-t> :BLines<CR>
+nnoremap <C-b> :Buffers<CR>
 " CTRL-A CTRL-Q to select all and build quickfix list
 
 function! s:build_quickfix_list(lines)
