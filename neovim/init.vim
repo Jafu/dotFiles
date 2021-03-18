@@ -161,6 +161,7 @@ Plug 'tpope/vim-unimpaired' " improved shortcut patterns from tpope
 Plug 'tpope/vim-surround' " surround stuff with {}[]() ad others
 Plug 'tpope/vim-speeddating' " increase date fields, in such formats 2020-10-16, w/ <c-a>, <c-x>
 Plug 'tpope/vim-repeat' " improve . with support for tpope plug-ins
+Plug 'tomtom/tcomment_vim'
 Plug 'vim-airline/vim-airline'
 
 Plug 'blueyed/vim-diminactive'
