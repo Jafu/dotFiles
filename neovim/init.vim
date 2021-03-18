@@ -1,7 +1,11 @@
 " change swp files location
-set directory=~/.vim/.swap//
-set backupdir=~/.vim/.backup//
-set undodir=~/.vim/.undo//
+silent !mkdir ~/.config/nvim-tmp > /dev/null 2>&1
+silent !mkdir ~/.config/nvim-tmp/.swap > /dev/null 2>&1
+set directory=~/.config/nvim-tmp/.swap
+silent !mkdir ~/.config/nvim-tmp/.backup > /dev/null 2>&1
+set backupdir=~/.config/nvim-tmp/.backup
+silent !mkdir ~/.config/nvim-tmp/.undo > /dev/null 2>&1
+set undodir=~/.config/nvim-tmp/.undo
 
 " One such option is the 'hidden' option, which allows you to re-use the same
 " window and switch from an unsaved buffer without saving it first. Also allows
@@ -96,7 +100,7 @@ let g:ale_disable_lsp = 1
 "------------------------------------------------------------
 " vim-plug configuration
 "------------------------------------------------------------
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim-plugged')
 
 " Make sure you use single quotes
 
