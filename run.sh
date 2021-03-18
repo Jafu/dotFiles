@@ -25,10 +25,14 @@ echo "> conda install pyvim flake8"
 echo "> conda install flake8"
 echo "> conda install pylint"
 
+nvimConfigPath=$(realpath neovim)
 vimrcPath=$(realpath dotVimrc)
 zshrcPath=$(realpath dotZshrc)
 gitconfigPath=$(realpath dotGitConfig)
 tmuxConfPath=$(realpath dotTmux.conf)
+
+#nvim:
+rm -r ~/.config/nvim; ln -s $nvimConfigPath ~/.config/nvim
 
 #vim:
 rm ~/.vimrc; ln -s $vimrcPath ~/.vimrc
