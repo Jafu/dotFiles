@@ -79,7 +79,10 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-
+" go to file under cursor in vertical split window
+nnoremap  <leader>gf <C-w>f<C-w>H
+" go to file and line under cursor in vertical split window
+nnoremap  <leader>gF <C-w>F<C-w>H
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
