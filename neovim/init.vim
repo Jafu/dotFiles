@@ -231,6 +231,7 @@ Plug 'benmills/vimux' "tmux intergration
 Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate' "autoclose pairs
 Plug 'embear/vim-localvimrc'
+Plug 'tpope/vim-sensible' " add typical vim user defaults
 Plug 'tpope/vim-unimpaired' " improved shortcut patterns from tpope	
 Plug 'tpope/vim-surround' " suround stuff with {}[]() ad others
 Plug 'tpope/vim-speeddating' " increase date fields, in such formats 2020-10-16, w/ <c-a>, <c-x>
