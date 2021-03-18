@@ -166,25 +166,8 @@ call plug#end()
 " enable
 set list
 
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:»\ ,eol:¬
-			
-" change colors of whitelabel chars
-" if !has("gui_running")
-" "	autocmd ColorScheme * highlight NonText ctermfg=237
-" "	autocmd ColorScheme * highlight SpecialKey ctermfg=237
-" "else
-" "	autocmd ColorScheme * highlight NonText guifg=#575b61
-" "	autocmd ColorScheme * highlight SpecialKey guifg=#575b61
-" "endif
-
 " vim gitgutter
 let g:gitgutter_max_signs = 10000
-
-"
-" vim-signify
-" let g:signify_realtime = 1 // Caution will autowrite files
-" set updatetime=1000
 
 " Plugin vim-jsx
 let g:jsx_ext_required = 0
