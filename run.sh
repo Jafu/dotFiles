@@ -6,8 +6,8 @@ echo '> sudo apt install neovim git zsh tmux curl'
 echo '> sudo apt install gnome-tweak-tool gnome-tweaks'
 echo '> sudo apt install gpaste gnome-shell-extensions-gpaste'
 echo '> sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-echo "> sh -c 'curl -fLo \"\$\{XDG_DATA_HOME:-\$HOME/.local/share\}\"/nvim/site/autoload/plug.vim --create-dirs " \
-       "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'";
+echo "> sh -c 'curl -fLo \"\$\{XDG_DATA_HOME:-\$HOME/.local/share\}\"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'";
 echo "> mkdir .config/nvim"
 echo "> echo 'source ~/.vimrc' >> .config/nvim/init.vim"
 echo "> sudo apt install universal-ctags silversearcher-ag fzf"
