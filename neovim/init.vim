@@ -1,4 +1,4 @@
-" change swp files location
+" change swap files location
 silent !mkdir ~/.config/nvim-tmp > /dev/null 2>&1
 silent !mkdir ~/.config/nvim-tmp/.swap > /dev/null 2>&1
 set directory=~/.config/nvim-tmp/.swap
@@ -21,7 +21,7 @@ set hidden
 set ignorecase
 set smartcase
 
-" substitude line globally by default
+" substitute line globally by default
 set gdefault
 
 " Instead of failing a command because of unsaved changes, instead raise a
@@ -41,7 +41,7 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
-" netrw explor/Vexplore/Sexplore
+" netrw explore/Vexplore/Sexplore
 " preview vertically
 let g:netrw_preview = 1
 " preview vertically
@@ -58,7 +58,7 @@ set cursorline
 au InsertLeave * set cursorline
 au InsertEnter * set nocursorline
 
-" add max charcters in line marker
+" add max characters in line marker
 set colorcolumn=90
 
 " set system clipboard as default register
@@ -152,24 +152,24 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'ElmCast/elm-vim'
 "
 " Appearance
-Plug 'benmills/vimux' "tmux intergration
+Plug 'benmills/vimux' " tmux integration
 Plug 'mileszs/ack.vim'
-Plug 'Raimondi/delimitMate' "autoclose pairs
+Plug 'Raimondi/delimitMate' "auto close pairs
 Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sensible' " add typical vim user defaults
 Plug 'tpope/vim-unimpaired' " improved shortcut patterns from tpope	
-Plug 'tpope/vim-surround' " suround stuff with {}[]() ad others
+Plug 'tpope/vim-surround' " surround stuff with {}[]() ad others
 Plug 'tpope/vim-speeddating' " increase date fields, in such formats 2020-10-16, w/ <c-a>, <c-x>
-Plug 'tpope/vim-repeat' " improve . with support for tpope plugins
+Plug 'tpope/vim-repeat' " improve . with support for tpope plug-ins
 Plug 'vim-airline/vim-airline'
 
 Plug 'blueyed/vim-diminactive'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-" Add plugins to &runtimepath
+" Add plug-ins to &runtimepath
 call plug#end()
 
 
-" Config to show whitespace characters
+" Configuration to show whitespace characters
 " enable
 set list
 
@@ -207,6 +207,7 @@ function! s:build_quickfix_list(lines)
   cc
 endfunction
 
+
 let g:fzf_action = {
   \ 'ctrl-q': function('s:build_quickfix_list'),
   \ 'ctrl-t': 'tab split',
@@ -217,7 +218,7 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 
 """"""""""""""""""""""""""""""
-" YouCompleteMNe
+" YouCompleteMe
 let g:is_show_argument_hints_enabled = 1
 autocmd FileType javascript setlocal omnifunc=tern#Complete
 
@@ -253,13 +254,13 @@ let g:airline_mode_map = {
 	\'n': 'N'
 \}
 
-" airline config: dont show expected string
+" airline configuration: don't show expected string
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
-" airline config: cursor position
+" airline configuration: cursor position
 let g:airline_section_z = "%l:%v[%L]"
 
-" airline config: truncate branchname
+" airline configuration: truncate branchname
 let g:airline#extensions#branch#displayed_head_limit = 6
 let g:airline#extensions#hunks#non_zero_only = 1
 
@@ -267,7 +268,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:localvimrc_whitelist=['/home/jakob/repos/*']
 let g:localvimrc_sandbox = 0
 
-" diminactive plugin
+" diminactive plug=in
 let g:diminactive_enable_focus = 1
 
 
