@@ -12,14 +12,7 @@ set undodir=~/.vim/.undo//
 " try to quit without saving, and swap files will keep you safe if your computer
 " crashes.
 set hidden
-
-" Show partial commands in the last line of the screen
-set showcmd
-
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
-set hlsearch
-
+"
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
@@ -33,11 +26,6 @@ set confirm
 
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
-
-" And reset the terminal code for the visual bell. If visualbell is set, and
-" this line is also included, vim will neither flash nor beep. If visualbell
-" is unset, this does nothing.
-set t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
@@ -55,13 +43,7 @@ let g:netrw_preview = 1
 " preview vertically
 let g:netrw_liststyle = 3
 
-
-
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
-
-" Indentation settings for using hard tabs for indent. Display tabs as
-" two characters wide.
+" Indentation settings for using hard tabs for indent.
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -106,23 +88,6 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
-
-" make word upercase
-inoremap <c-u> <esc>viwUea
-
-
-"" manage buffers
-" close buffer but keep split window; works with syntastic
-nnoremap <leader>bd :bp \| bd #<CR>
-" goto next buffer
-nnoremap <leader>bn :bn<CR>
-" goto previous buffer
-nnoremap <leader>bp :bp<CR>
-
-
-" Find F I X M Es
-nnoremap <leader>fx :vimgrep FIXME frontend/src/main/js/**/*.js
-
 
 " Make ale work with coc
 let g:ale_disable_lsp = 1
