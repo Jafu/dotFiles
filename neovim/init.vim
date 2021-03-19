@@ -108,8 +108,6 @@ call plug#begin('~/.config/nvim-plugged')
 " Make sure you use single quotes
 
 " " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -127,16 +125,9 @@ Plug 'morhetz/gruvbox'
 
 Plug 'godlygeek/tabular' " align inside text into column
 Plug 'plasticboy/vim-markdown'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'leshill/vim-json'
 Plug 'wavded/vim-stylus'
-" Plug 'crusoexia/vim-javascript-lib'
-" Plug 'ervandew/supertab' "required for ycm and ultisnips integration
-" Plug 'Valloric/YouCompleteMe' "intellisense
 Plug 'sirver/ultisnips' "snippets runner
 Plug 'honza/vim-snippets' "snippets
-" Plug 'flowtype/vim-flow' "javascript flow
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "VS Code completion
 
 
