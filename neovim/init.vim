@@ -152,8 +152,6 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'ElmCast/elm-vim'
 "
 " Appearance
-Plug 'benmills/vimux' " tmux integration
-Plug 'mileszs/ack.vim'
 Plug 'Raimondi/delimitMate' "auto close pairs
 Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-sensible' " add typical vim user defaults
