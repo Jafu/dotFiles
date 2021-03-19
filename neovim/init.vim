@@ -163,7 +163,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-airline/vim-airline'
 
 Plug 'blueyed/vim-diminactive'
-Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux-focus-events' " support for tmux focus events (focus vim pane from other tmux pane), handy for git-gutter or fugitive updates
 " Add plug-ins to &runtimepath
 call plug#end()
 
