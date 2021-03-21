@@ -41,11 +41,16 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
+" set syntax on for vim in ui
+syntax enable
+
 " netrw explore/Vexplore/Sexplore
 " preview vertically
 let g:netrw_preview = 1
 " preview vertically
 let g:netrw_liststyle = 3
+" get rid of netrw save confirmation on quit
+autocmd FileType netrw setl bufhidden=delete
 
 " Indentation settings for using hard tabs for indent.
 set tabstop=4
@@ -96,8 +101,27 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" Make ale work with coc
-let g:ale_disable_lsp = 1
+
+" Configuration to show whitespace characters
+" enable
+set list
+
+"" syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%*
+
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+	\let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+	\gvy/<C-R><C-R>=substitute(
+	\escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+	\gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+	\let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+	\gvy?<C-R><C-R>=substitute(
+	\escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+	\gV:call setreg('"', old_reg, old_regtype)<CR>
 
 
 "------------------------------------------------------------
@@ -158,141 +182,12 @@ Plug 'tmux-plugins/vim-tmux-focus-events' " support for tmux focus events (focus
 " Add plug-ins to &runtimepath
 call plug#end()
 
-
-" Configuration to show whitespace characters
-" enable
-set list
-
-" vim gitgutter
-let g:gitgutter_max_signs = 10000
-
-" Plugin vim-jsx
-let g:jsx_ext_required = 0
-
-" Enable syntax highlighting
-syntax on
-syntax enable
-colorscheme onedark
-set background=dark
-" colorscheme solarized
-set t_Co=256
-" let g:monokai_term_italic = 1
-" let g:monokai_gui_italic = 1
-
-
-"" syntastic recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%*
-
-""""""""""""""""""""""""""""""
-" fzf options
-nnoremap <C-p> :Files<CR>
-nnoremap <C-t> :BLines<CR>
-nnoremap <C-b> :Buffers<CR>
-" CTRL-A CTRL-Q to select all and build quickfix list
-
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
-
-
-""""""""""""""""""""""""""""""
-" YouCompleteMe
-let g:is_show_argument_hints_enabled = 1
-autocmd FileType javascript setlocal omnifunc=tern#Complete
-
-
-" Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-	\let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-	\gvy/<C-R><C-R>=substitute(
-	\escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-	\gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-	\let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-	\gvy?<C-R><C-R>=substitute(
-	\escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-	\gV:call setreg('"', old_reg, old_regtype)<CR>
-
-" get rid of netrw save confirmation on quit
-autocmd FileType netrw setl bufhidden=delete
-
-" airline config: Mode indicator
-let g:airline_mode_map = {
-	\'c': 'COMMAND',
-	\'^S': 'S-BLOCK',
-	\'R': 'REPLACE',
-	\'s': 'SELECT',
-	\'t': 'TERMINAL',
-	\'V': 'V-LINE',
-	\'^V': 'V-BLOCK',
-	\'i': 'INSERT',
-	\'__': '------',
-	\'S': 'S-LINE',
-	\'v': 'VISUAL',
-	\'n': 'N'
-\}
-
-" airline configuration: don't show expected string
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-
-" airline configuration: cursor position
-let g:airline_section_z = "%l:%v[%L]"
-
-" airline configuration: truncate branchname
-let g:airline#extensions#branch#displayed_head_limit = 6
-let g:airline#extensions#hunks#non_zero_only = 1
-
-" local vimrc whitelist: do not ask
-let g:localvimrc_whitelist=['/home/jakob/repos/*']
-let g:localvimrc_sandbox = 0
-
-" diminactive plug=in
-let g:diminactive_enable_focus = 1
-
-
-" vim-flow
-let g:flow#enable = 0
-
-" ale
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'html': [ 'prettier' ],
-\ 'css': [ 'prettier' ],
-\ }
-
-let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'html': [ 'prettier' ],
-\ 'css': [ 'prettier' ],
-\ }
-nnoremap <leader>e :ALENext<CR>
-nnoremap <leader>E :ALEPrevious<CR>
-highlight ALEWarning ctermbg=none
-highlight ALEError ctermbg=none
-" fugitive
-" autoclose buffers
-autocmd BufReadPost fugitive://* set bufhidden=delete
-
-"" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
-"" (via http://stackoverflow.com/a/22253548/1626737)
-"let g:SuperTabDefaultCompletionType    = '<C-n>'
-"let g:SuperTabCrMapping                = 0
-"let g:UltiSnipsExpandTrigger           = '<tab>'
-"let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-"let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-"let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-
+source ~/.config/nvim/plugins/gitgutter.vim
+source ~/.config/nvim/plugins/colorscheme.vim
+source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/airline.vim
+source ~/.config/nvim/plugins/localvimrc.vim
+source ~/.config/nvim/plugins/diminactive.vim
+source ~/.config/nvim/plugins/ale.vim
+source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/coc.vim
