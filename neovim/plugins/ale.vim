@@ -1,8 +1,10 @@
 " ale
 let g:ale_linters = {
+\ 'typescript': ['eslint', 'tslint'],
 \ 'javascript': ['eslint'],
 \ 'html': [ 'prettier' ],
 \ 'css': [ 'prettier' ],
+\ 'vue': [ 'prettier' ],
 \ }
 
 let g:ale_fixers = {

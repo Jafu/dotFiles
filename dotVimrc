@@ -201,10 +201,13 @@ Plug 'morhetz/gruvbox'
 
 Plug 'godlygeek/tabular' " align inside text into column
 Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
 " Plug 'leshill/vim-json'
 Plug 'wavded/vim-stylus'
+Plug 'posva/vim-vue'
+Plug 'digitaltoad/vim-pug'
 " Plug 'crusoexia/vim-javascript-lib'
 " Plug 'ervandew/supertab' "required for ycm and ultisnips integration
 " Plug 'Valloric/YouCompleteMe' "intellisense
@@ -365,9 +368,11 @@ let g:flow#enable = 0
 
 " ale
 let g:ale_linters = {
+\ 'typescript': ['eslint', 'tslint'],
 \ 'javascript': ['eslint'],
 \ 'html': [ 'prettier' ],
 \ 'css': [ 'prettier' ],
+\ 'vue': [ 'prettier' ],
 \ }
 
 let g:ale_fixers = {

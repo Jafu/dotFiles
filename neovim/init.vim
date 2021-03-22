@@ -149,10 +149,13 @@ Plug 'morhetz/gruvbox'
 
 Plug 'godlygeek/tabular' " align inside text into column
 Plug 'plasticboy/vim-markdown'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'wavded/vim-stylus'
 Plug 'sirver/ultisnips' "snippets runner
 Plug 'honza/vim-snippets' "snippets
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "VS Code completion
+Plug 'posva/vim-vue'
+Plug 'digitaltoad/vim-pug'
 
 
 " Lint
