@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(z rsync git npm node jira lein zsh-autosuggestions history-substring-search)
+plugins=(z rsync git npm node jira lein zsh-autosuggestions history-substring-search poetry)
 
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -151,20 +151,47 @@ _fzf_compgen_path() {
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
-
+# >>> my export init >>>
+# export CONDA_HOME=/home/jakob/miniconda3
+# <<< my export init <<<
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jakob/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/jakob/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jakob/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/jakob/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/home/jakob/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/jakob/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/jakob/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/jakob/miniconda3/bin:$PATH"
+#         export CONDA_HOME=/home/jakob/miniconda3
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
+# >>> pyenv initialize >>>
+export PATH="/home/jakob/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# <<< pyenv initialize <<<
+
+# >>> poetry >>>
+export PATH="$HOME/.poetry/bin:$PATH"
+export POETRY_VIRTUALENVS_CREATE=true
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+# <<< poetry <<<
+#
+# <<< direnv init <<<
+# show_conda_env() {
+#     if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+#         echo "($(basename $CONDA_DEFAULT_ENV)) "
+#     fi
+# }
+# TURN OFF CONDA PROMPT CHANGE IF USING BELOW PROMPT
+# USE THE FOLLOWING COMMAND TO TURN OFF CONDA PROMPT: conda config — set changeps1 False
+# PS1='$(show_conda_env)'$PS1
+
+eval "$(direnv hook zsh)"
+# <<< direnv init <<<
